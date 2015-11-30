@@ -12,16 +12,19 @@ public class LottoV1 {
         Random lottoMachine = new Random();
         lottoMachine.setSeed(System.currentTimeMillis());
         int[] sixGeneratedNumbers = generateLottoNumbers(lottoMachine);
-        int[] myNumbers = new int[MAX_EXTRACTION_NUMBERS];
-        int[] wonNumbers = new int[MAX_EXTRACTION_NUMBERS];
+        int[] myNumbers;
+        myNumbers = new int[MAX_EXTRACTION_NUMBERS];
+        int[] wonNumbers;
+        wonNumbers = new int[MAX_EXTRACTION_NUMBERS];
 
-        int tentatives = 0;
+        int tentatives;
+        tentatives = 0;
         int howManyWons = 0;
 
 
 
         try {
-            Thread.currentThread().sleep(1000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -69,7 +72,7 @@ public class LottoV1 {
             }
 
             tentatives++;
-        } while (howManyWons < 4);
+        } while (howManyWons < 6);
 
 
 
@@ -145,7 +148,7 @@ public class LottoV1 {
 
     private static Set<Integer> extractSixUniqueNumbers(Random lottoMachine) {
 
-        Set<Integer> sixGeneratedNumbers =  new HashSet<Integer> ();
+        Set<Integer> sixGeneratedNumbers =  new HashSet<> ();
 
         int nr;
 
