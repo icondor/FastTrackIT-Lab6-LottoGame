@@ -13,13 +13,13 @@ public class LottoV1 {
         lottoMachine.setSeed(System.currentTimeMillis());
         int[] sixGeneratedNumbers = generateLottoNumbers(lottoMachine);
         int[] myNumbers;
-        myNumbers = new int[MAX_EXTRACTION_NUMBERS];
+        //myNumbers = new int[MAX_EXTRACTION_NUMBERS];
         int[] wonNumbers;
         wonNumbers = new int[MAX_EXTRACTION_NUMBERS];
 
         int tentatives;
         tentatives = 0;
-        int howManyWons = 0;
+        int howManyWons;
 
 
 
@@ -147,33 +147,17 @@ public class LottoV1 {
 
 
     private static Set<Integer> extractSixUniqueNumbers(Random lottoMachine) {
-
-        Set<Integer> sixGeneratedNumbers =  new HashSet<> ();
-
+        Set<Integer> sixGeneratedNumbers = new HashSet<>();
         int nr;
-
-
-
-        for (int i = 0; i < MAX_EXTRACTION_NUMBERS; i++) {
-
+        //    int dupl=0;
+        do {
             nr = lottoMachine.nextInt(MAXVALUE) + 1;
-
-            while (!sixGeneratedNumbers.add(nr)) {
-
-                nr = lottoMachine.nextInt(MAXVALUE) + 1;
-
-                sixGeneratedNumbers.add(nr);
-
-            }
-
+            sixGeneratedNumbers.add(nr);
+//           dupl++;
+//           if(dupl>MAX_EXTRACTION_NUMBERS)
+//               System.out.println("dupl"+dupl);
         }
-
-
-
-
-
-
-
+        while (sixGeneratedNumbers.size() != MAX_EXTRACTION_NUMBERS);
         return sixGeneratedNumbers;
 
     }
