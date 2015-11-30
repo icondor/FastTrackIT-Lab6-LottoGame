@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by condor on 21/11/15.
  */
-public class Demo {
+public class DemoExceptions {
 
     public static void main(String[] argv) {
 
@@ -53,7 +53,7 @@ public class Demo {
         if(!exista)
 
             try {
-                f.createNewFile();
+                boolean isCreated = f.createNewFile();
             } catch (IOException e) {
              //  throw new Exception("ba, asta e natang");
             }
