@@ -58,10 +58,10 @@ public class LottoV1 {
             switch (howManyWons) {   // pay attention that the break is from switch not from do while :)
 
                 case 4: // that is 4 numbers
-                   System.out.println("congrat, you won 4 numbers after tentatives:"+tentatives);
+                  // System.out.println("congrat, you won 4 numbers after tentatives:"+tentatives);
                     break;
                 case 5: // that is 5 numbers
-                    System.out.println("congrat, you won 5 numbers after tentatives:"+tentatives);
+                   // System.out.println("congrat, you won 5 numbers after tentatives:"+tentatives);
                     break;
                 case 6: // that is 6 numbers
                     System.out.println("WOW, you won 6 numbers after tentatives:"+tentatives);
